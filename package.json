@@ -1,0 +1,17 @@
+{
+  "name": "namaste",
+  "version": "1.0.0",
+  "description": "This is my first main react project",
+  "main": "app.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "react",
+    "first",
+    "react",
+    "project"
+  ],
+  "author": "Abiola",
+  "license": "ISC"
+}
