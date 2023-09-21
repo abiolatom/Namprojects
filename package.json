@@ -2,9 +2,15 @@
   "name": "namaste",
   "version": "1.0.0",
   "description": "This is my first main react project",
-  "main": "app.js",
   "scripts": {
-    "test": "jest"
+    "start": "parcel index.html",
+    "test": "jest",
+    "build": "parcel build index.html"
+     
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Abiola/namaste.git"
   },
   "keywords": [
     "react",
@@ -13,5 +19,13 @@
     "project"
   ],
   "author": "Abiola",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.9.3",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
 }
