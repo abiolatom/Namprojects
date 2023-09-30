@@ -1,52 +1,3 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-
-const Header = () => {
-  return (
-    <div className="header">
-      <div className="logo-container">
-        <img
-          className="logo"
-          src="https://downtownmidland.com/wp-content/uploads/2020/12/A1-900x600.jpg"
-        />
-      </div>
-      <div className="nav-items">
-        <ul>
-          <li>Home</li>
-          <li>About Us</li>
-          <li>Contact Us</li>
-          <li>Cart</li>
-        </ul>
-      </div>
-    </div>
-  );
-};
-
-const ResCard = (props) => {
-  const { resData } = props;
-  const { cloudinaryImageId, name, avgRating, cuisines, totalFee, deliveryTime  } = resData?.info;
-
-
-  return (
-    <div className="res-card" style={{ backgroundColor: "#f0f0f0" }}>
-        <img
-          className="res-logo"
-          alt="res-logo"
-          src={
-            "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/" +
-           cloudinaryImageId
-          }
-        />
-        <h3>{name}</h3>
-        <h4>{cuisines.join(", ")}</h4>
-        <h4>{avgRating} Stars</h4>
-        <h4>{totalFee} Euros</h4>
-        <h4>{deliveryTime} Minutes</h4>
-      </div>
-    
-  );
-};
-
 const resList = [
   {
     info: {
@@ -78,7 +29,6 @@ const resList = [
       cuisines: ["American", "Snacks", "Turkish", "Portuguese", "Continental"],
       avgRating: 4.4,
       totalFee: 4500,
-      deliveryTime:27
     },
   },
        
@@ -93,7 +43,10 @@ const resList = [
       cuisines: ["Mexican", "Salads", "Desserts", "Beverages"],
       avgRating: 4.4,
       totalFee: 4200,
-      deliveryTime:40
+      
+      parentId: "5064",
+      avgRatingString: "4.4",
+      totalRatingsString: "5K+",
     },
   },
   {
@@ -114,7 +67,7 @@ const resList = [
       ],
       avgRating: 4.4,
       totalFee: 4200,
-      deliveryTime:30
+      
     },
   },
   {
@@ -129,35 +82,8 @@ const resList = [
       avgRating: 4.5,
       veg: true,
       totalFee: 3500,
-      deliveryTime:40
       
     },
   }
-];
+]
 
-const Body = () => {
-  return (
-    <div className="body">
-      <div className="search"> Search</div>
-      <div className="res-card-container">
-        {resList.map((restaurant) => (
-        <ResCard key={restaurant.info.id} resData={restaurant}/>
-      ))}
-       
-      </div>
-    </div>
-  );
-};
-
-const AppLayout = () => {
-  return (
-    <div className="app">
-      <Header />
-      <Body />
-    </div>
-  );
-};
-
-const root = ReactDOM.createRoot(document.getElementById("root"));
-
-root.render(<AppLayout />);
